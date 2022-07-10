@@ -2,7 +2,9 @@
 #include <cmath>
 
 bool testarCubos(int n, int teste1, int teste2){
-    if(n==(pow(teste1, 3)+pow(teste2, 3))) 
+    teste1=pow(teste1, 3);
+    teste2=pow(teste2, 3);
+    if(n==teste1+teste2) 
         return true;
 
     return false;
@@ -10,7 +12,8 @@ bool testarCubos(int n, int teste1, int teste2){
 
 int main(){
     long long int limite;
-    int cont=0, raiz3;
+    int cont, raiz3;
+    bool achou=false;
 
     std::cout<<"Digite ate que numero deseja procurar:";
     std::cin>>limite;
@@ -23,16 +26,20 @@ int main(){
         for(int i=1; i<=limite; i++){
 
             raiz3=pow(i, (1.0/3.0));
+            cont=0;
 
-            for(int j=1; j<raiz3; j++){
+            for(int j=1; j<=raiz3; j++){
 
-                for(int k=j; k<raiz3; k++){
+                for(int k=j; k<=raiz3; k++){
 
-                    if(cont==2){
-                        std::cout<<i<<"\n";
-                        cont=0;
+                    if(testarCubos(i, j, k)) {
+                        cont++;
                     }
-                    if(testarCubos(i, j, k)) cont++;
+                    if(cont==2){
+                        std::cout<<i<<"-"<<j<<"+"<<k<<"\n";
+                        cont=0;
+                        achou=true;
+                    }
 
                 }
 
@@ -41,6 +48,8 @@ int main(){
         }
 
     }
+
+    if(!achou) std::cout<<"Nenhum numero foi encontrado\n";
 
     return 0;
 }
