@@ -12,7 +12,7 @@ bool testarCubos(int n, int teste1, int teste2){
 
 int main(){
     long long int limite;
-    int cont, raiz3;
+    int cont, raiz3, num1, num2;
     bool achou=false;
 
     std::cout<<"Digite ate que numero deseja procurar:";
@@ -34,9 +34,13 @@ int main(){
 
                     if(testarCubos(i, j, k)) {
                         cont++;
+                        if(cont==1){
+                            num1=j;
+                            num2=k;
+                        }
                     }
                     if(cont==2){
-                        std::cout<<i<<"-"<<j<<"+"<<k<<"\n";
+                        std::cout<<i<<"-"<<num1<<"^3"<<"+"<<num2<<"^3, "<<j<<"^3"<<"+"<<k<<"^3"<<"\n";
                         cont=0;
                         achou=true;
                     }
