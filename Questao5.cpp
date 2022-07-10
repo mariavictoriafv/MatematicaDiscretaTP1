@@ -8,7 +8,7 @@ int dividePrimo(int combinacao){
     for(int i=0; i<168; i++){
         primos[i] = pow(primos[i], 2);
         if(primos[i]<combinacao && combinacao%primos[i] == 0){
-            divisivel = sqrt(primos[i]);
+            divisivel = primos[i];
         }
     }
     return divisivel;
@@ -34,8 +34,11 @@ int main(){
     }
 
     for(int i=0; i<n; i++){
-        std::cout << pascal[2*i][i] << " é divisivel por " << dividePrimo(pascal[2*i][i]);
-        std::cout << "\n";
+        if(pascal[2*i][i]!=1){
+            std::cout << pascal[2*i][i] << " é divisivel por " << dividePrimo(pascal[2*i][i]);
+            std::cout << "\n";
+        }
     }
+    return 0;
     
 }
