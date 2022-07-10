@@ -20,4 +20,6 @@ int main(){
     }
     std::cout << "\n"; 
     std::cout << "Quantidade de numeros de Fibonacci divisiveis por 5: " << div5 << "\n";
+
+    return 0;
 }
