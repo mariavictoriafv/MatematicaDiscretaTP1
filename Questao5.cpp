@@ -20,7 +20,7 @@ int dividePrimo(unsigned long long int combinacao){
 int main(){
     int n;
     
-    std::cout << "Insira um valor para n: (maximo: 89) " << "\n"; //o valor maximo para n é 89 pois os valores encontrados na sequencia de pascal utilizando n>89 ultrapassam o tamanho suportado pela variavel do tipo unsigned long long int
+    std::cout << "Insira um valor maximo para n: (maximo: 89) " << "\n"; //o valor maximo para n é 89 pois os valores encontrados na sequencia de pascal utilizando n>89 ultrapassam o tamanho suportado pela variavel do tipo unsigned long long int
     std::cin >> n;
     unsigned long long int pascal[2*n][2*n]; //matriz que irá alocar o triângulo de pascal
 
