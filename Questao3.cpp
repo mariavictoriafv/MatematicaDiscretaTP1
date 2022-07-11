@@ -2,13 +2,13 @@
 
 int main(){
     int qtd;
-    std::cout << "Insira a quantidade de numeros de Fibonacci a serem utilizados: (maximo: 92)" << "\n";
+    std::cout << "Insira a quantidade de numeros de Fibonacci a serem utilizados: (maximo: 200)" << "\n"; //a quantidade máxima é 200 pois os valores encontrados utilizando um intervalo acima de 200 ultrapassam o tamanho suportado pela variavel do tipo unsigned long long int
     std::cin >> qtd;
 
     std::cout << "Lista de numeros de Fibonacci divisiveis por 5: \n";
 
     int div5 = 0; //variavel que irá armazenar quantos numeros dentro do intervalo são divisiveis por 5
-    unsigned long long int* fibo = new long long int[qtd]; //o vetor para armazenar os numeros de Fibonacci é long long devido ao fato de que quanto maior o intervalo maiores os numeros da sequencia
+    unsigned long long int* fibo = new unsigned long long int[qtd]; //o vetor para armazenar os numeros de Fibonacci é long long devido ao fato de que quanto maior o intervalo maiores os numeros da sequencia
     
     //os primeiros números da sequência sempre são 0 e 1, respectivamente
     fibo[0] = 0; 
