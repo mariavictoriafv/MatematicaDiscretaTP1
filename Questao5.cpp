@@ -7,7 +7,7 @@ int dividePrimo(int combinacao){
 
     for(int i=0; i<168; i++){
         primos[i] = pow(primos[i], 2);
-        if(primos[i]<combinacao && combinacao%primos[i] == 0){
+        if(primos[i]<=combinacao && combinacao%primos[i] == 0){
             divisivel = primos[i];
         }
     }
@@ -16,9 +16,9 @@ int dividePrimo(int combinacao){
 
 int main(){
     int n;
-    std::cout << "Insira um valor para n: " << "\n";
+    std::cout << "Insira um valor para n: (Maximo: 34)" << "\n";
     std::cin >> n;
-    int pascal[2*n][2*n];
+    long long int pascal[2*n][2*n];
     pascal[0][0] = 1;
     pascal[1][0] = 1;
     pascal[1][1] = 1;
