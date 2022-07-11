@@ -21,7 +21,7 @@ int main(){
     int n;
     std::cout << "Insira um valor para n: (maximo: 34)" << "\n";
     std::cin >> n;
-    long long int pascal[2*n][2*n]; //matriz que irá alocar o triângulo de pascal
+    unsigned long long int pascal[2*n][2*n]; //matriz que irá alocar o triângulo de pascal
 
     //inicializamos o triângulo de pascal com os valores 1
     pascal[0][0] = 1;

@@ -8,7 +8,7 @@ int main(){
     std::cout << "Lista de numeros de Fibonacci divisiveis por 5: \n";
 
     int div5 = 0; //variavel que irá armazenar quantos numeros dentro do intervalo são divisiveis por 5
-    long long int* fibo = new long long int[qtd]; //o vetor para armazenar os numeros de Fibonacci é long long devido ao fato de que quanto maior o intervalo maiores os numeros da sequencia
+    unsigned long long int* fibo = new long long int[qtd]; //o vetor para armazenar os numeros de Fibonacci é long long devido ao fato de que quanto maior o intervalo maiores os numeros da sequencia
     
     //os primeiros números da sequência sempre são 0 e 1, respectivamente
     fibo[0] = 0; 
