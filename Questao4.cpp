@@ -2,7 +2,7 @@
 
 int main(){
     //Variaveis que serao usadas no codigo
-    long long int limite, i, j, k, cont;
+    unsigned long long int limite, i, j, k, cont;
     bool achou=false;
 
     //O usuario escolhe ate onde ele quer procurar os numeros com a caracteristica pedida
