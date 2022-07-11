@@ -34,13 +34,13 @@ int main(){
     std::cout<<"Valores de n, com n< e n impar, tais que C(n, [n/2]) nao e divisivel pelo quadrado de um primo:\n";
 
     //Para facilitar os calculos, vamos usar o triangulo de Pascal
-    unsigned long long int tPascal[50][50]; //Testamos apenas numeros menores que 200
+    unsigned long long int tPascal[70][70]; //Testamos apenas numeros menores que 200
 
     tPascal[0][0]=1;
     tPascal[1][0]=1;
     tPascal[1][1]=1;
     
-    for(int i=2; i<50; i++){
+    for(int i=2; i<70; i++){
         
         for(int j=0; j<=i; j++){
             
@@ -52,7 +52,7 @@ int main(){
     } 
 
     //Agora precisamos calcular as combinacoes pedidas na questao
-    for(int i=0; i<50; i++){
+    for(int i=0; i<70; i++){
        
         if(i%2!=0)
             if(!divisaoPorPrimo(tPascal[i][(i/2)]))
