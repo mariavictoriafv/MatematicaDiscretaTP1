@@ -2,7 +2,7 @@
 
 int main(){
     //Variaveis que serao usadas no codigo
-    long long int limite, i, j, k;
+    long long int limite, i, j, k, cont;
     bool achou=false;
 
     //O usuario escolhe ate onde ele quer procurar os numeros com a caracteristica pedida
@@ -19,20 +19,25 @@ int main(){
     j=0;
     k=1;
     i=1;
+    cont=2;
     while(i<=limite){
         //Se i for multiplo de 3, imprimimos i
         //Achamos ao menos um numero de Fibonacci divisivel por 3
         if(i%3==0){
-            std::cout<<i<<"\n";
+            std::cout<<"Posicao:"<<cont<<"-"<<i<<"\n";
             achou=true;
         }
 
         //O proximo numero sera a soma dele mesmo, mais o seu antecessor na sequencia
         //O antecessor esta armazenado em k
+        //j recebe k, e j sera o novo atecessor
+        //k recebe o i atual
+        //e atualizamos o i
         j=k;
         k=i;
         i=i+j;
         
+        cont++;//esse contador apenas guarda a posicao do numero na sequencia
     }
 
     //Se nao acharmos nenhum numero ate o limite, informamos ao usuario
