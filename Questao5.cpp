@@ -10,7 +10,7 @@ int dividePrimo(int combinacao){
     for(int i=0; i<168; i++){
         primos[i] = pow(primos[i], 2); //calcula o quadrado dos numeros primos
         if(primos[i]<=combinacao && combinacao%primos[i] == 0){ //verifica se (2n, n) é divisivel pelo quadrado do numero primo
-            divide = primos[i];
+            divide = sqrt(primos[i]);
             break; //o codigo para após encontrar o primeiro quadrado de um primo que divide o número
         }
     }
@@ -42,7 +42,7 @@ int main(){
 
     for(int i=3; i<n; i++){ //iniciamos pelo numero 3 pois n != 1 e 2
         if(i!=4){ //verificamos se o n!=4
-            std::cout << pascal[2*i][i] << " e divisivel por " << dividePrimo(pascal[2*i][i]);
+            std::cout << pascal[2*i][i] << " e divisivel por " << dividePrimo(pascal[2*i][i]) << "²";
             std::cout << "\n";
         }
     }
