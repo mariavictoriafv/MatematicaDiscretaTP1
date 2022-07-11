@@ -19,7 +19,7 @@ int dividePrimo(int combinacao){
 
 int main(){
     int n;
-    std::cout << "Insira um valor para n: (Maximo: 34)" << "\n";
+    std::cout << "Insira um valor para n: (maximo: 34)" << "\n";
     std::cin >> n;
     long long int pascal[2*n][2*n]; //matriz que irá alocar o triângulo de pascal
 
@@ -42,7 +42,7 @@ int main(){
 
     for(int i=3; i<n; i++){ //iniciamos pelo numero 3 pois n != 1 e 2
         if(i!=4){ //verificamos se o n!=4
-            std::cout << pascal[2*i][i] << " é divisivel por " << dividePrimo(pascal[2*i][i]);
+            std::cout << pascal[2*i][i] << " e divisivel por " << dividePrimo(pascal[2*i][i]);
             std::cout << "\n";
         }
     }

@@ -2,7 +2,7 @@
 
 int main(){
     int qtd;
-    std::cout << "Insira a quantidade de numeros de Fibonacci a serem utilizados: (máximo: 92)" << "\n";
+    std::cout << "Insira a quantidade de numeros de Fibonacci a serem utilizados: (maximo: 92)" << "\n";
     std::cin >> qtd;
 
     std::cout << "Lista de numeros de Fibonacci divisiveis por 5: \n";
