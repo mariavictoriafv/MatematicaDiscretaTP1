@@ -19,7 +19,8 @@ int dividePrimo(unsigned long long int combinacao){
 
 int main(){
     int n;
-    std::cout << "Insira um valor para n: (maximo: 34)" << "\n";
+    
+    std::cout << "Insira um valor para n: (maximo: 89) " << "\n"; //o valor maximo para n é 89 pois os valores encontrados na sequencia de pascal utilizando n>89 ultrapassam o tamanho suportado pela variavel do tipo unsigned long long int
     std::cin >> n;
     unsigned long long int pascal[2*n][2*n]; //matriz que irá alocar o triângulo de pascal
 
@@ -31,18 +32,19 @@ int main(){
     //preenchendo a matriz
     for (int i=2; i<2*n; i++){
         for (int j=0; j<=i; j++){
-            if(j==0||j==i){ //verifica se a posição acessada é uma das "bordas" do triângulo e coloca o valor 1 caso seja
+            if(j==0||j==i){ //verifica se a posição acessada é uma das "bordas" do triângulo e coloca o valor 1 caso esteja na "borda"
                 pascal[i][j] = 1;
             }
             else{
-                pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j]; //formula para encontrar o valor do numero que ocupará aquela posição, essa relação entre os números é chamada de Relação de Stifel
+                pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j]; //fórmula para encontrar o valor do numero que ocupará aquela posição, essa relação entre os números é chamada de Relação de Stifel
             }
         }
     }
 
-    for(int i=3; i<n; i++){ //iniciamos pelo numero 3 pois n != 1 e 2
-        if(i!=4){ //verificamos se o n!=4
-            std::cout << pascal[2*i][i] << " e divisivel por " << dividePrimo(pascal[2*i][i]) << "²";
+    //de acordo com o que foi provado por Andrew Granville e Olivier Ramaré n!=1, n!=2 e n!=4
+    for(int i=3; i<n; i++){ //iniciamos pelo numero 3 pois n!=1 e n!=2
+        if(i!=4){ //verificamos se n!=4
+            std::cout << pascal[2*i][i] << " e divisivel por " << dividePrimo(pascal[2*i][i]) << "^2";
             std::cout << "\n";
         }
     }
