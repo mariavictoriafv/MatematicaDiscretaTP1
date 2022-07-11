@@ -1,12 +1,20 @@
 #include <iostream>
 #include <cmath>
 
-bool divisaoPorPrimo(int n){
+bool verificaPrimo(unsigned long long int n){
+    int cont=0, div=2;
+    while(div<=n){
+        if(n%div==0) cont++;
+        if(cont>1) return false;
+        div++;
+    }
+    
+    return true;
+}
 
-    //Sabemos que n<200. Então o maior numero ao quadrado que divide n, e a raiz quadrada de n
-    //O piso da raiz quadrada de 200 é 14
-    //Entao precisamos testar a divisibilidade apenas com primos menores que 14
-    //Como sao poucos, vamos criar um vetor com todos eles
+bool divisaoPorPrimo(unsigned long long int n){
+
+    //Sabemos que o maior numero ao quadrado que divide n, e a raiz quadrada de n
 
     int c=2; 
     int p;
@@ -22,27 +30,17 @@ bool divisaoPorPrimo(int n){
     return false;
 }
 
-bool verificaPrimo(int n){
-    int cont=0, div=2;
-    while(div<=n){
-        if(n%div==0) cont++;
-
-        div++;
-    }
-
-}
-
 int main(){
     std::cout<<"Valores de n, com n< e n impar, tais que C(n, [n/2]) nao e divisivel pelo quadrado de um primo:\n";
 
     //Para facilitar os calculos, vamos usar o triangulo de Pascal
-    unsigned long long int tPascal[80][80]; //Testamos apenas numeros menores que 200
+    unsigned long long int tPascal[50][50]; //Testamos apenas numeros menores que 200
 
     tPascal[0][0]=1;
     tPascal[1][0]=1;
     tPascal[1][1]=1;
     
-    for(int i=2; i<80; i++){
+    for(int i=2; i<50; i++){
         
         for(int j=0; j<=i; j++){
             
@@ -54,7 +52,7 @@ int main(){
     } 
 
     //Agora precisamos calcular as combinacoes pedidas na questao
-    for(int i=0; i<80; i++){
+    for(int i=0; i<50; i++){
        
         if(i%2!=0)
             if(!divisaoPorPrimo(tPascal[i][(i/2)]))
