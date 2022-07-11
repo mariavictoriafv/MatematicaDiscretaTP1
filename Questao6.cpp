@@ -33,7 +33,7 @@ bool divisaoPorPrimo(unsigned long long int n){
 }
 
 int main(){
-    std::cout<<"Valores de n, com n< e n impar, tais que C(n, [n/2]) nao e divisivel pelo quadrado de um primo:\n";
+    std::cout<<"Valores de n, com n<70 e n impar, tais que C(n, [n/2]) nao e divisivel pelo quadrado de um primo:\n";
 
     //Para facilitar os calculos, vamos usar o triangulo de Pascal
     unsigned long long int tPascal[70][70]; 
